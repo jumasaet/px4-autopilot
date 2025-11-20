@@ -1,13 +1,13 @@
 #!/bin/sh
-# @name Aion Robotics R1 Rover
+# @name Generic Differential Rover
 # @type Rover
 # @class Rover
 
 . ${R}etc/init.d/rc.rover_differential_defaults
 
 PX4_SIMULATOR=${PX4_SIMULATOR:=gz}
-PX4_GZ_WORLD=${PX4_GZ_WORLD:=rover_obstacles}
-PX4_SIM_MODEL=${PX4_SIM_MODEL:=r1_rover}
+PX4_GZ_WORLD=${PX4_GZ_WORLD:=rover}
+PX4_SIM_MODEL=${PX4_SIM_MODEL:=rover_diff_new}
 
 param set-default SIM_GZ_EN 1 # Gazebo bridge
 
@@ -58,3 +58,18 @@ param set-default SIM_GZ_WH_MAX2 130
 param set-default SIM_GZ_WH_DIS2 100
 
 param set-default SIM_GZ_WH_REV 1 # reverse right wheel
+
+
+param set NAV_ACC_RAD 0.5
+param set NPFG_PERIOD 6.0
+param set NPFG_DAMPING 0.8
+param set GND_SPEED_MAX 1.5
+param set GND_YAW_RATE_MAX 1.0
+
+
+param set-default NAVL1_PERIOD 6.0
+param set-default NAVL1_DAMPING 0.8
+
+# Parámetros CRÍTICOS para que siga waypoints
+# param set NAV_DLL_ACT 1
+# param set MIS_TAKEOFF_ALT 0

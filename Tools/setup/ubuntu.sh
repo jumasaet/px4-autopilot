@@ -168,9 +168,7 @@ if [[ $INSTALL_NUTTX == "true" ]]; then
 
 	if [[ "${INSTALL_ARCH}" == "x86_64" ]]; then
 		sudo DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends install \
-			g++-multilib \
 			gcc-arm-none-eabi \
-			gcc-multilib \
 			esptool \
 			;
 
